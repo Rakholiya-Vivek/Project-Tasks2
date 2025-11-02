@@ -1,0 +1,4 @@
+groups:
+  - name: example-alerts
+    rules: []
+

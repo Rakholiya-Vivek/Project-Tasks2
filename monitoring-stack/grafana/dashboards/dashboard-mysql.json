@@ -1,0 +1,23 @@
+{
+  "annotations": {"list": []},
+  "panels": [
+    {
+      "type": "graph",
+      "title": "MySQL Threads Connected",
+      "targets": [{"expr": "mysql_global_status_threads_connected", "refId": "A"}]
+    },
+    {
+      "type": "graph",
+      "title": "MySQL Queries / sec",
+      "targets": [{"expr": "rate(mysql_global_status_questions[5m])", "refId": "A"}]
+    },
+    {
+      "type": "graph",
+      "title": "MySQL Slow Queries / sec",
+      "targets": [{"expr": "rate(mysql_global_status_slow_queries[5m])", "refId": "A"}]
+    }
+  ],
+  "schemaVersion": 16,
+  "title": "MySQL Metrics"
+}
+

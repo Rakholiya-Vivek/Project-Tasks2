@@ -1,0 +1,28 @@
+{
+  "annotations": {"list": []},
+  "panels": [
+    {
+      "type": "graph",
+      "title": "CPU Usage",
+      "targets": [{"expr": "100 - (avg by(instance)(irate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)", "refId": "A"}]
+    },
+    {
+      "type": "graph",
+      "title": "Memory Usage (bytes)",
+      "targets": [{"expr": "node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes", "refId": "A"}]
+    },
+    {
+      "type": "graph",
+      "title": "Disk Utilization (%)",
+      "targets": [{"expr": "100 * (node_filesystem_size_bytes{fstype!~\"tmpfs|aufs|overlay\"} - node_filesystem_free_bytes{fstype!~\"tmpfs|aufs|overlay\"}) / node_filesystem_size_bytes{fstype!~\"tmpfs|aufs|overlay\"}", "refId": "A"}]
+    },
+    {
+      "type": "graph",
+      "title": "Network Receive bytes/sec",
+      "targets": [{"expr": "rate(node_network_receive_bytes_total[5m])", "refId": "A"}]
+    }
+  ],
+  "schemaVersion": 16,
+  "title": "System Metrics"
+}
+

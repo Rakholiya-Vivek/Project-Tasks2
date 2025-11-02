@@ -1,0 +1,23 @@
+{
+  "annotations": {"list": []},
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Postgres Connections",
+      "targets": [{"expr": "pg_stat_activity_count", "refId": "A"}]
+    },
+    {
+      "type": "graph",
+      "title": "Postgres Transactions / sec",
+      "targets": [{"expr": "rate(pg_stat_database_xact_commit[5m]) + rate(pg_stat_database_xact_rollback[5m])", "refId": "A"}]
+    },
+    {
+      "type": "graph",
+      "title": "Postgres Cache Hit (%)",
+      "targets": [{"expr": "(sum(pg_stat_database_blks_hit) / (sum(pg_stat_database_blks_hit) + sum(pg_stat_database_blks_read))) * 100", "refId": "A"}]
+    }
+  ],
+  "schemaVersion": 16,
+  "title": "PostgreSQL Metrics"
+}
+
