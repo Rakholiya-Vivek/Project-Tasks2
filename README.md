@@ -1,13 +1,13 @@
-📊 Database Monitoring with Prometheus + Grafana
+# 📊 Database Monitoring with Prometheus + Grafana
 
-🧩 Objective
+## 🧩 Objective
 
 Set up a complete monitoring stack to monitor MySQL, PostgreSQL, and System Metrics using Prometheus for metrics collection and Grafana for dashboard visualization.
 
 
 ---
 
-🏗️ Stack Components
+## 🏗️ Stack Components
 
 Prometheus – Metrics collection and alerting
 
@@ -25,7 +25,7 @@ Docker Compose – To run all services easily
 
 ---
 
-⚙️ Directory Structure
+## ⚙️ Directory Structure
 
 monitoring-stack/
 ├── docker-compose.yml
@@ -49,7 +49,7 @@ monitoring-stack/
 
 ---
 
-🚀 Setup Steps
+## 🚀 Setup Steps
 
 1. Clone the Repository
 
@@ -81,7 +81,7 @@ docker ps
 
 ---
 
-🧠 Verification
+## 🧠 Verification
 
 🔹 Prometheus Targets
 
@@ -123,16 +123,16 @@ Import the dashboard JSON files located in grafana/dashboards/ for:
 
 🧾 Useful Commands
 
-# Stop all services
+## Stop all services
 docker-compose down
 
-# View container logs
+## View container logs
 docker logs <container_name>
 
-# Check MySQL users
+## Check MySQL users
 docker exec -it mysql_db mysql -uroot -prootpass -e "SELECT User, Host FROM mysql.user;"
 
-# Restart monitoring stack
+## Restart monitoring stack
 docker-compose up -d
 
 ---
